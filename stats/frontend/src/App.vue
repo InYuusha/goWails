@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Wails logo" src="./assets/images/logo.png" class="logo zoomIn">
+    
     <CPUUsage/>
   </div>
 </template>

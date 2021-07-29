@@ -1,20 +1,30 @@
 <template>
   <div class="container">
-    <h1>{{message}}</h1>
-    <a @click="getMessage">Press Me!</a>
+
+ <vc-donut background="blue" :thickness="40" :total="100" foreground="grey" :sections="sections">
+   <h1 style="color:rgb(16, 138, 227)">{{perc}}%</h1>
+ </vc-donut>
+
   </div>
 </template>
 
 <script>
+import * as Wails from '@wailsapp/runtime';
+
 export default {
+
   data() {
     return {
-      message: " "
+      sections:[0],
+      perc:""
+    
     };
   },
-  mounted:()=>{
-    wails.events.on("usage",(usage)=>{
-      this.message=usage.avg
+  mounted:function(){
+    Wails.Events.On("usage",usage=>{
+      console.log(usage.avg)
+      this.sections=[{value:usage.avg,color:'#108ae3'}]
+      this.perc=usage.avg
     })
 
   },
