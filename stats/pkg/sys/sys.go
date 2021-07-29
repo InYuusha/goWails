@@ -17,6 +17,12 @@ type CpuUsage struct {
 }
 func (s*Stats)WailsInit(runtime *wails.Runtime)error{
 	runtime.Log.New("Stats")
+	go func(){
+		for{
+			runtime.Events.Emit("usage",s.GetCpuUsage())
+			time.Sleep(time.Second)
+		}
+	}()
 	return nil
 }
 

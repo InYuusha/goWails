@@ -12,13 +12,14 @@ export default {
       message: " "
     };
   },
+  mounted:()=>{
+    wails.events.on("usage",(usage)=>{
+      this.message=usage.avg
+    })
+
+  },
   methods: {
-    getMessage: function() {
-      var self = this;
-      window.backend.Stats.GetCpuUsage().then(usage => {
-        self.message = usage.avg;
-      });
-    }
+  
   }
 };
 </script>
