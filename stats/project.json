@@ -1,0 +1,25 @@
+{
+ "name": "stats",
+ "description": "Enter your project description",
+ "author": {
+  "name": "InYuusha",
+  "email": "asuse975@gmail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "stats",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npm run build",
+  "bridge": "src",
+  "serve": "npm run serve"
+ },
+ "tags": "",
+ "WailsVersion": "",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
+ "LdFlags": "",
+ "GoPath": "",
+ "UseFirebug": false
+}
