@@ -1,8 +1,8 @@
 <template>
   <div class="container">
 
- <vc-donut background="blue" :thickness="40" :total="100" foreground="grey" :sections="sections">
-   <h1 style="color:rgb(16, 138, 227)">{{perc}}%</h1>
+ <vc-donut :auto-adjust-text-size="true" background="#0d1942" :thickness="10" :total="100" foreground="#515563" :sections="sections">
+   <h1 style="color:#108ae3;">{{perc}}%</h1>
  </vc-donut>
 
   </div>
