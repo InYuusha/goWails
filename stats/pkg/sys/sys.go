@@ -11,11 +11,9 @@ import (
 type Stats struct {
 	log *wails.CustomLogger
 }
-
 type CpuUsage struct {
 	Average int `json:"avg"`
 }
-
 func (s *Stats) WailsInit(runtime *wails.Runtime) error {
 	s.log=runtime.Log.New("Stats")
 	go func() {

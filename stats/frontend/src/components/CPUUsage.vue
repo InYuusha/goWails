@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2>CPU Usage</h2>
 
  <vc-donut :auto-adjust-text-size="true" background="#0d1942" :thickness="10" :total="100" foreground="#515563" :sections="sections">
    <h1 style="color:#108ae3;">{{perc}}%</h1>
@@ -22,7 +23,7 @@ export default {
   },
   mounted:function(){
     Wails.Events.On("usage",usage=>{
-      console.log(usage.avg)
+      
       this.sections=[{value:usage.avg,color:'#108ae3'}]
       this.perc=usage.avg
     })
